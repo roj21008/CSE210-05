@@ -55,7 +55,7 @@ class Cast:
         
         Args:
             group (string): The name of the group.
-             
+            
         Returns:
             List: The first actor in the group.
         """

@@ -1,3 +1,4 @@
+from game.scripting.handle_collisions_action import HandleCollisionsAction
 class Director:
     """A person who directs the game. 
     
@@ -14,6 +15,7 @@ class Director:
             video_service (VideoService): An instance of VideoService.
         """
         self._video_service = video_service
+        self._is_game_over = False
         
     def start_game(self, cast, script):
         """Starts the game using the given cast and script. Runs the main game loop.
@@ -39,4 +41,9 @@ class Director:
         """
         actions = script.get_actions(group)    
         for action in actions:
-            action.execute(cast, script)          
+            action.execute(cast, self._is_game_over, script)
+
+            if isinstance(action, HandleCollisionsAction):
+                self._is_game_over = action.get_is_game_over() 
+
+ 

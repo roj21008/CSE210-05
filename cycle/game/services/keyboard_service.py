@@ -22,7 +22,7 @@ class KeyboardService:
 
         self._keys['i'] = pyray.KEY_I
         self._keys['j'] = pyray.KEY_J
-        self._keys['k'] = pyray.KEY_K 
+        self._keys['k'] = pyray.KEY_K
         self._keys['l'] = pyray.KEY_L
 
     def is_key_up(self, key):

@@ -25,7 +25,7 @@ class VideoService:
         """
         pyray.begin_drawing()
         pyray.clear_background(pyray.BLACK)
-        if self._debug == True: 
+        if self._debug == True:
             self._draw_grid()
     
     def draw_actor(self, actor, centered=False):
